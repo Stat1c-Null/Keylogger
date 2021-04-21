@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1618420782 source:d:\programs\programming\c++\keylogger\main.cpp
+	<iostream>
+	<windows.h>
+
