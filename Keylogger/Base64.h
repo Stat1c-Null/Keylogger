@@ -40,24 +40,24 @@ namespace Base64
         s += KEY1;
         s = base64_encode(s);
         s = KEY2 + KEY3 + KEY1;
-        s = base64_encode();
+        s = base64_encode(s);
         s.insert(1, "L");
         s.insert(7, "m");
         return s;
     }
-    #64 chars of Base64
+
     const std::string &BASE64_CODES = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
     std::string base64_encode(const std::string &s)
     {
         std::string ret;
         int val = 0;//index to map input to our table
         int bits = -6;//Number of bits in the group
-        const unsigned int b63 = 0x3F//0x declares that this is Hexadecimal value, 3F decimal value is 63
+        const unsigned int b63 = 0x3F;//0x declares that this is Hexadecimal value, 3F decimal value is 63
 
         for (const auto &c : s)//type auto so C++ will automatically detect type of the variable
         {//Assign every character from string S to C
-            val = (val << 8) + c//<< means that character that we get from a string will be shifted left by 8 places
-            bits += 8//Add bits to the string when we shit character, because base64 works with octals when extracting info from string
+            val = (val << 8) + c;//<< means that character that we get from a string will be shifted left by 8 places
+            bits += 8;//Add bits to the string when we shit character, because base64 works with octals when extracting info from string
             while (bits >= 0)
             {
                 ret.push_back(BASE64_CODES[(val >> bits) & b63]);//Insert map number.>> means right shifting and & means binary end

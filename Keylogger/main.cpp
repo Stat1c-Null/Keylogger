@@ -1,5 +1,8 @@
 #include <iostream>
-#include <windows.h> //Header to hide output window from showing up
+#include "windows.h" //Header to hide output window from showing up
+#include "Helper.h"
+#include "KeyConstants.h"
+#include "Base64.h"
 using namespace std;
 
 int main()

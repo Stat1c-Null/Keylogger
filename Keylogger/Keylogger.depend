@@ -1,5 +1,22 @@
 # depslib dependency file v1.0
-1618420782 source:d:\programs\programming\c++\keylogger\main.cpp
+1619628778 source:d:\programs\programming\c++\keylogger\main.cpp
 	<iostream>
-	<windows.h>
+	"windows.h"
+	"Helper.h"
+	"KeyConstants.h"
+	"Base64.h"
+
+1619627206 d:\programs\programming\c++\keylogger\helper.h
+	<ctime>
+	<string>
+	<sstream>
+	<fstream>
+
+1619625069 d:\programs\programming\c++\keylogger\keyconstants.h
+	<map>
+	<string>
+
+1619627157 d:\programs\programming\c++\keylogger\base64.h
+	<vector>
+	<string>
 
