@@ -94,6 +94,24 @@ public:
         }
         CallNumber = r;
     }
+
+    long GetLeftCount() const {return repeat_count;}//Get how many more times timer suppose to run
+
+    long RepeatCount() const {return CallNumber;}//How many times we want to repeat call
+
+    void SetInterval(const unsigned long &i)//Set interval between calls
+    {
+        if (Alive)
+            return;
+        interval = std::chrono::milliseconds(i);
+    }
+    //Convert from integer into long type
+    unsigned long Interval() const {return interval.count();}
+
+    const std::function<void(void)> &Function() const
+    {
+        return funct;
+    }
 };
 
 #endif // TIMER_H
