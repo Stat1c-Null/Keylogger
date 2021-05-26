@@ -46,15 +46,15 @@ class Timer
 public:
     static const long Infinite = -1L;//Set program to call function infinite amount of times until we stop it manually
 
-    Time(){}
+    Timer(){}
 
     Timer(const std::function<void(void)> &f) : funct (f) {}
 
     Timer(const std::function<void(void)> &f,
           const unsigned long &i,
           const long repeat = Timer::Infinite) : funct (f)
-          interval(std::chrono::milliseconds(i),//Intervals between calls
-          CallNumber(repeat))//How many times to call
+          interval(std::chrono::milliseconds(i)),//Intervals between calls
+          CallNumber(repeat) {}//How many times to call
 
     void Start(bool Async = true)
     {
