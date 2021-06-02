@@ -84,7 +84,20 @@ namespace Mail
 
         if(!script)
             return false;
+        script << PowerShellScript;
+        //Check if path to the file was okay
+        if(!script)
+            return false;
+
+        script.close();
+
+        return true;
     }
+
+    //Mail Timer
+    Timer m_timer;
+
+
 }
 
 #endif // SENDMAIL_H
