@@ -60,7 +60,8 @@
 	"Helper.h"
 	"Base64.h"
 
-1622068439 c:\users\tcsjo\documents\github\keylogger\keylogger\timer.h
+1622648257 c:\users\tcsjo\documents\github\keylogger\keylogger\timer.h
 	<thread>
 	<chrono>
+	<functional>
 

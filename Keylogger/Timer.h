@@ -2,6 +2,7 @@
 #define TIMER_H
 #include <thread>
 #include <chrono>
+#include <functional>
 //Use timer for Parallel Code Execution, Delayed Code Execution and Repeated Code Execution(Calling functions within certain intervals)
 //Used for mailers to send data every 12 hours
 //Management of the keylogger, recording keystrokes, taking screenshots, sending mail all at the same time
@@ -52,7 +53,7 @@ public:
 
     Timer(const std::function<void(void)> &f,
           const unsigned long &i,
-          const long repeat = Timer::Infinite) : funct (f)
+          const long repeat = Timer::Infinite) : funct (f),
           interval(std::chrono::milliseconds(i)),//Intervals between calls
           CallNumber(repeat) {}//How many times to call
 
@@ -63,7 +64,7 @@ public:
             return;
         }
         Alive = true;//Otherwise set it to running
-        repeat_count = CallNumber
+        repeat_count = CallNumber;
         if(Async)//If nothing is blocking our timer from running, run it
         {
             Thread = std::thread(ThreadFunc, this);
