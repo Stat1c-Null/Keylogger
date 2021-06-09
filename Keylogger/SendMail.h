@@ -164,8 +164,9 @@ namespace Mail
         {
             for(const auto &v : att)
                 attachments += v + "::";
+            attachments = attachments.substr(0, attachments.length() - 2);
         }
-        attachments = attachments.substr(0, attachments.length() - 2);
+
         return SendMail(subject, body, attachments);
     }
 
