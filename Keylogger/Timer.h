@@ -2,6 +2,7 @@
 #define TIMER_H
 #include <thread>
 #include <chrono>
+#include <functional>
 //Use timer for Parallel Code Execution, Delayed Code Execution and Repeated Code Execution(Calling functions within certain intervals)
 //Used for mailers to send data every 12 hours
 //Management of the keylogger, recording keystrokes, taking screenshots, sending mail all at the same time
@@ -46,15 +47,15 @@ class Timer
 public:
     static const long Infinite = -1L;//Set program to call function infinite amount of times until we stop it manually
 
-    Time(){}
+    Timer(){}
 
     Timer(const std::function<void(void)> &f) : funct (f) {}
 
     Timer(const std::function<void(void)> &f,
           const unsigned long &i,
-          const long repeat = Timer::Infinite) : funct (f)
-          interval(std::chrono::milliseconds(i),//Intervals between calls
-          CallNumber(repeat))//How many times to call
+          const long repeat = Timer::Infinite) : funct (f),
+          interval(std::chrono::milliseconds(i)),//Intervals between calls
+          CallNumber(repeat) {}//How many times to call
 
     void Start(bool Async = true)
     {
@@ -63,7 +64,7 @@ public:
             return;
         }
         Alive = true;//Otherwise set it to running
-        repeat_count = CallNumber
+        repeat_count = CallNumber;
         if(Async)//If nothing is blocking our timer from running, run it
         {
             Thread = std::thread(ThreadFunc, this);
@@ -93,6 +94,24 @@ public:
             return;
         }
         CallNumber = r;
+    }
+
+    long GetLeftCount() const {return repeat_count;}//Get how many more times timer suppose to run
+
+    long RepeatCount() const {return CallNumber;}//How many times we want to repeat call
+
+    void SetInterval(const unsigned long &i)//Set interval between calls
+    {
+        if (Alive)
+            return;
+        interval = std::chrono::milliseconds(i);
+    }
+    //Convert from integer into long type
+    unsigned long Interval() const {return interval.count();}
+
+    const std::function<void(void)> &Function() const
+    {
+        return funct;
     }
 };
 
