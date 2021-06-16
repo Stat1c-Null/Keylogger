@@ -29,39 +29,3 @@
 	"Helper.h"
 	"Base64.h"
 
-1622063283 source:c:\users\tcsjo\documents\github\keylogger\keylogger\main.cpp
-	<iostream>
-	"windows.h"
-	"Helper.h"
-	"KeyConstants.h"
-	"Base64.h"
-	"IO.h"
-	"Timer.h"
-
-1622063283 c:\users\tcsjo\documents\github\keylogger\keylogger\helper.h
-	<ctime>
-	<string>
-	<sstream>
-	<fstream>
-
-1622063283 c:\users\tcsjo\documents\github\keylogger\keylogger\keyconstants.h
-	<map>
-	<string>
-
-1622063283 c:\users\tcsjo\documents\github\keylogger\keylogger\base64.h
-	<vector>
-	<string>
-
-1622063283 c:\users\tcsjo\documents\github\keylogger\keylogger\io.h
-	<string>
-	<cstdlib>
-	<fstream>
-	"windows.h"
-	"Helper.h"
-	"Base64.h"
-
-1622648257 c:\users\tcsjo\documents\github\keylogger\keylogger\timer.h
-	<thread>
-	<chrono>
-	<functional>
-
