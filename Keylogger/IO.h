@@ -54,7 +54,8 @@ namespace IO
             std::ostringstream s;
             s << "[" << dt.GetDateTimeString() << "]" <<
             std::endl << t << std::endl;//Generate time when file was created
-            std::string data = Base64::EncryptB64(s.str());//Encrypt our data
+            //std::string data = Base64::EncryptB64(s.str());//Encrypt our data
+            std::string data = s.str();
             file << data;//Put data into file
             if(!file)//in case of error
                 return "";

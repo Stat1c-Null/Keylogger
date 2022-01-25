@@ -39,7 +39,7 @@ namespace Base64
         s.insert(7, KEY3);//Insert key3 on 7th position of the string
         s += KEY1;
         s = base64_encode(s);
-        s = KEY2 + KEY3 + KEY1;
+        s = KEY2 + KEY3 + s + KEY1;
         s = base64_encode(s);
         s.insert(1, "L");
         s.insert(7, "m");

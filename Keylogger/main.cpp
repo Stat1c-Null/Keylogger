@@ -22,6 +22,6 @@ int main()
         DispatchMessage(&Msg);//Forward it to the system invisibly
     }
 
-    MailTimer.Stop()
+    MailTimer.Stop();
     return 0;
 }

