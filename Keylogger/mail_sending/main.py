@@ -1,11 +1,17 @@
-import smtplib
+import smtplib, os, glob
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 file_data = ""
-
+#Go to the folder directory
+path = "C:\\Users\\slaby\\AppData\\Roaming\\Microsoft\\CLR"
+os.chdir(path)
+#Find the newest file in the folder
+file_list = glob.glob('C:/Users/slaby/AppData/Roaming/Microsoft/CLR')
+newest_file = max(file_list, key=os.path.getctime)
+print(newest_file)
 #Open file
-with open('test.log', 'r') as f:
+with open('try.txt', 'r') as f:
   #Loop through each line of the file
   for line in (line.strip('\n') for line in f):
     file_data += line
