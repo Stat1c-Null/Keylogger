@@ -4432,3 +4432,15 @@ Mail was not sent! Error Code: 3 Keylog: [Left Alt][Tab][Tab][Tab][Tab][Tab][/Le
 [19.01.2022 15:22:52]
 Hook Started... Timer Started
 
+[08.02.2022 18:18:06]
+Hook Started... Timer Started
+
+[08.02.2022 18:18:37]
+Mail was not sent! Error Code: 3 Keylog: [Left Alt][Tab][/Left Alt][F][D][S][K][F][D][S][K][F][K][S][D][A][F][K][S][D][A][Backspace][Backspace][Backspace][Backspace][Backspace][Backspace][Backspace][Backspace][Backspace][Backspace][Backspace][Backspace][Backspace][Backspace][Backspace][Backspace][Backspace][Backspace][Backspace][Backspace][Backspace][Backspace][Backspace]
+
+[08.02.2022 18:18:37]
+<From SendMail> Return code: 32762
+
+[08.02.2022 18:19:08]
+Mail was not sent! Error Code: 3 Keylog: [Left Alt][Tab][/Left Alt]
+

