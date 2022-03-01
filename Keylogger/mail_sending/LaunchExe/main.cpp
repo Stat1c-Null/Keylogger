@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
     cout << "Launching exe" << endl;
-    system("explorer D:\\Programming\\C++\\Keylogger\\mail_sending\\main.exe ");
+    system("explorer C:\\CodingProjects\\C++\\Keylogger-main\\Keylogger\\mail_sending\\main.exe");
     system("pause");
     return 0;
 }

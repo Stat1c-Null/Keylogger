@@ -2,44 +2,44 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="Timer.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3870" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="KeyConstants.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="595" topLine="33" />
-		</Cursor>
-	</File>
 	<File name="main.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="693" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="IO.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2217" topLine="39" />
-		</Cursor>
-	</File>
-	<File name="Base64.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1384" topLine="50" />
-		</Cursor>
-	</File>
-	<File name="Helper.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+	<File name="Helper.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="60" />
 		</Cursor>
 	</File>
-	<File name="SendMail.h" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+	<File name="Timer.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="5583" topLine="118" />
+			<Cursor1 position="3870" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="KeybHooks.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+	<File name="SendMail.h" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1072" topLine="27" />
+			<Cursor1 position="4474" topLine="96" />
+		</Cursor>
+	</File>
+	<File name="KeyConstants.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="595" topLine="33" />
+		</Cursor>
+	</File>
+	<File name="IO.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2178" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="Base64.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1384" topLine="50" />
+		</Cursor>
+	</File>
+	<File name="KeybHooks.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1077" topLine="27" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
