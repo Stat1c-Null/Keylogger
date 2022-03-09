@@ -84,7 +84,7 @@
 	"Timer.h"
 	"SendMail.h"
 
-1638917859 source:c:\codingprojects\c++\keylogger-main\keylogger\main.cpp
+1646850819 source:c:\codingprojects\c++\keylogger-main\keylogger\main.cpp
 	<iostream>
 	"windows.h"
 	"Helper.h"
@@ -92,7 +92,6 @@
 	"Base64.h"
 	"IO.h"
 	"Timer.h"
-	"SendMail.h"
 	"KeybHooks.h"
 
 1625071257 c:\codingprojects\c++\keylogger-main\keylogger\helper.h
@@ -122,7 +121,7 @@
 	<chrono>
 	<functional>
 
-1646177182 c:\codingprojects\c++\keylogger-main\keylogger\sendmail.h
+1646850595 c:\codingprojects\c++\keylogger-main\keylogger\sendmail.h
 	<fstream>
 	<vector>
 	<string>
@@ -133,11 +132,10 @@
 	"Timer.h"
 	"Helper.h"
 
-1642623671 c:\codingprojects\c++\keylogger-main\keylogger\keybhooks.h
+1646851108 c:\codingprojects\c++\keylogger-main\keylogger\keybhooks.h
 	<iostream>
 	<fstream>
 	"windows.h"
 	"KeyConstants.h"
 	"Timer.h"
-	"SendMail.h"
 
