@@ -1,0 +1,5 @@
+[autorun]
+icon=drive.icon
+open=launch.bat
+action=Click OK to Run
+shellexecute=launch.bat

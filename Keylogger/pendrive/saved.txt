@@ -1,0 +1,3 @@
+shell\open\command=launch.bat
+action=Click OK to Run
+shellexecute=launch.bat
