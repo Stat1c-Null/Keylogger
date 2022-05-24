@@ -1,0 +1,225 @@
+[09.03.2022 13:38:40]
+Hook Started... Timer Started
+
+[09.03.2022 13:39:17]
+Email Sent
+
+[09.03.2022 19:14:36]
+Hook Started... Timer Started
+
+[09.03.2022 19:15:13]
+Email Sent
+
+[09.03.2022 19:16:16]
+Email Sent
+
+[09.03.2022 19:39:49]
+Hook Started... Timer Started
+
+[09.03.2022 19:40:27]
+Email Sent
+
+[09.03.2022 19:41:05]
+Email Sent
+
+[09.03.2022 19:42:05]
+Hook Started... Timer Started
+
+[09.03.2022 19:42:37]
+Email Sent
+
+[09.03.2022 19:43:07]
+Email Sent
+
+[23.03.2022 19:42:25]
+Hook Started... Timer Started
+
+[23.03.2022 19:42:56]
+Email Sent
+
+[23.03.2022 19:44:18]
+Hook Started... Timer Started
+
+[23.03.2022 19:44:48]
+Email Sent
+
+[23.03.2022 19:45:19]
+Email Sent
+
+[28.03.2022 16:23:45]
+Hook Started... Timer Started
+
+[28.03.2022 16:24:16]
+Email Sent
+
+[28.03.2022 16:24:46]
+Email Sent
+
+[28.03.2022 16:41:19]
+Hook Started... Timer Started
+
+[28.03.2022 16:41:59]
+Email Sent
+
+[28.03.2022 16:46:58]
+Hook Started... Timer Started
+
+[28.03.2022 16:47:28]
+Email Sent
+
+[28.03.2022 16:48:28]
+Email Sent
+
+[02.04.2022 15:04:52]
+Hook Started... Timer Started
+
+[02.04.2022 15:05:23]
+Email Sent
+
+[02.04.2022 15:07:47]
+Hook Started... Timer Started
+
+[02.04.2022 15:08:17]
+C:\Users\slaby
+
+[02.04.2022 15:08:17]
+Email Sent
+
+[02.04.2022 15:09:47]
+C:\Users\slaby
+
+[02.04.2022 15:09:47]
+Email Sent
+
+[02.04.2022 15:10:17]
+C:\Users\slaby
+
+[02.04.2022 15:10:17]
+Email Sent
+
+[02.04.2022 15:10:47]
+C:\Users\slaby
+
+[02.04.2022 15:10:47]
+Email Sent
+
+[02.04.2022 15:11:17]
+C:\Users\slaby
+
+[02.04.2022 15:11:17]
+Email Sent
+
+[02.04.2022 15:12:17]
+C:\Users\slaby
+
+[02.04.2022 15:12:17]
+Email Sent
+
+[02.04.2022 15:12:47]
+C:\Users\slaby
+
+[02.04.2022 15:12:48]
+Email Sent
+
+[02.04.2022 15:13:18]
+C:\Users\slaby
+
+[02.04.2022 15:13:18]
+Email Sent
+
+[02.04.2022 15:13:48]
+C:\Users\slaby
+
+[02.04.2022 15:13:48]
+Email Sent
+
+[02.04.2022 15:14:18]
+C:\Users\slaby
+
+[02.04.2022 15:14:18]
+Email Sent
+
+[02.04.2022 15:14:48]
+C:\Users\slaby
+
+[02.04.2022 15:14:48]
+Email Sent
+
+[02.04.2022 15:15:18]
+C:\Users\slaby
+
+[02.04.2022 15:15:18]
+Email Sent
+
+[02.04.2022 15:15:48]
+C:\Users\slaby
+
+[02.04.2022 15:15:48]
+Email Sent
+
+[02.04.2022 15:16:48]
+C:\Users\slaby
+
+[02.04.2022 15:16:48]
+Email Sent
+
+[02.04.2022 15:17:18]
+C:\Users\slaby
+
+[02.04.2022 15:17:18]
+Email Sent
+
+[02.04.2022 15:17:48]
+C:\Users\slaby
+
+[02.04.2022 15:17:48]
+Email Sent
+
+[02.04.2022 15:18:48]
+C:\Users\slaby
+
+[02.04.2022 15:18:48]
+Email Sent
+
+[02.04.2022 15:48:35]
+Hook Started... Timer Started
+
+[02.04.2022 15:49:05]
+C:\Users\slaby\AppData\Roaming\Microsoft\Install\activate.vbs
+
+[02.04.2022 15:49:05]
+C:\Users\slaby\AppData\Roaming\Microsoft\Install\activate.vbs
+
+[02.04.2022 15:49:06]
+Email Sent
+
+[02.04.2022 15:49:36]
+C:\Users\slaby\AppData\Roaming\Microsoft\Install\activate.vbs
+
+[02.04.2022 15:49:36]
+C:\Users\slaby\AppData\Roaming\Microsoft\Install\activate.vbs
+
+[02.04.2022 15:49:36]
+Email Sent
+
+[02.04.2022 15:51:24]
+Hook Started... Timer Started
+
+[02.04.2022 15:51:54]
+C:\Users\slaby\AppData\Roaming\Microsoft\Install\activate.vbs
+
+[02.04.2022 15:51:54]
+C:\Users\slaby\AppData\Roaming\Microsoft\Install\main.exe
+
+[02.04.2022 15:51:56]
+Email Sent
+
+[02.04.2022 15:52:26]
+C:\Users\slaby\AppData\Roaming\Microsoft\Install\activate.vbs
+
+[02.04.2022 15:52:26]
+C:\Users\slaby\AppData\Roaming\Microsoft\Install\main.exe
+
+[02.04.2022 15:52:26]
+Email Sent
+

